@@ -31,9 +31,9 @@ if(isset($_POST["submit"]))
           );  
           // count number of row
           $count = $statement->rowCount();
-          // undefined $statement and $ con
-        //   unset($con);
-        //   unset($statement);
+          // undefined $stmt and $ con
+          unset($con);
+          unset($statement);
           if($count > 0)  
           {  
               // if  user email and password is valid then create session and redirect to index.php page
