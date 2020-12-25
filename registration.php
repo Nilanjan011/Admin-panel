@@ -63,6 +63,8 @@
             $insert= "INSERT INTO user (Fname,Lname,email, password) VALUES(?,?,?,?)";
             $run=$con->prepare($insert)->execute([$fname,$lname,$email,$pass]);
         }
+        // undefined  $ con
+        unset($con);
         //after registration redirect to index.php page
         if (isset($run)) {
             $_SESSION["email"] = $_POST["email"];  

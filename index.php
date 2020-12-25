@@ -99,6 +99,9 @@ $(document).ready(function() {
                         </tr>
                         <?php
                         }
+                        // undefined $stmt and $ con
+                        unset($con);
+                        unset($stmt);
                         ?>
                     </tbody>
                 </table>

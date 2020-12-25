@@ -37,7 +37,10 @@ if (isset($_POST['submit'])) {
       
     }
     // redirect to index.php
+    unset($con);
+
     if($run){
-       header("location:index.php");
+        unset($con);
+        header("location:index.php");
     }
 }

@@ -16,9 +16,12 @@ if (isset($_GET['id'])) {
         $stmt=$con->prepare($sql);
         $stmt->execute();
         $row=$stmt->fetch(PDO::FETCH_ASSOC);
+// undefined $stmt and $ con
+        unset($con);
+        unset($stmt);
         
     } catch (\Throwable $th) {
-            echo "the error id $th"; 
+            echo "the error is $th"; 
     }
 }
 ?>

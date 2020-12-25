@@ -45,9 +45,11 @@ if (isset($_POST['submit']))
 // insert all data in database
     $insert= "INSERT INTO product (pname,price,is_available,product_image,create_date) VALUES(?,?,?,?,?)";
     $run=$con->prepare($insert)->execute([$pname,$price,$is_available,$img,$created_date]);
-    if($run){
-        header("location:index.php");
-    }
-
+  // undefined $stmt and $ con  
+    unset($con);
+    unset($run);
+    // after insert redirect to index.php file
+    header("location:index.php");
+    
 }
 ?>

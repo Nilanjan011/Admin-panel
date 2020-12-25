@@ -31,15 +31,17 @@ if(isset($_POST["submit"]))
           );  
           // count number of row
           $count = $statement->rowCount();
-
+          // undefined $statement and $ con
+        //   unset($con);
+        //   unset($statement);
           if($count > 0)  
           {  
-              // check user email and password valid then create session and redirect to index.php page
+              // if  user email and password is valid then create session and redirect to index.php page
                $_SESSION["email"] = $_POST["email"];  
                header("location:index.php");  
           }  
           else  
-          {  
+          {  // if user email and password is not valid then show error message
                $message = '<label> Email or Password does not match</label>';  // if  user email and password invalid 
           }  
      }  
